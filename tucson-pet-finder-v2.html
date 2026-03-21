@@ -9,12 +9,12 @@
 :root{--bg:#F7F4EF;--bg2:#EDEAE3;--white:#FFFFFF;--navy:#1A2E4A;--navy2:#2C4A6E;--teal:#1A7A6E;--teal2:#22A090;--teal-light:#E8F5F3;--gold:#B8860B;--gold-light:#FEF9E7;--red:#C0392B;--red-light:#FDEDEC;--green:#1E8449;--green-light:#EAFAF1;--text:#2C3E50;--text-mid:#566573;--text-light:#85929E;--border:#D5D8DC;--border-dark:#AAB7B8;--shadow:0 2px 12px rgba(0,0,0,0.08);--shadow-hover:0 6px 24px rgba(0,0,0,0.13)}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:'Source Sans 3',sans-serif;font-size:18px;line-height:1.7;min-height:100vh;overflow-x:hidden;-webkit-tap-highlight-color:transparent}
-.page{max-width:480px;margin:0 auto;padding:0 0 80px}
-nav{background:var(--navy);padding:14px 18px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.2)}
-.nav-back{color:rgba(255,255,255,0.7);font-size:0.88rem;font-weight:600;text-decoration:none;display:flex;align-items:center;gap:5px;white-space:nowrap}
-.nav-title{font-family:'Lora',serif;font-size:0.95rem;font-weight:700;color:#fff;flex:1}
-.nav-live{font-size:0.75rem;font-weight:700;color:var(--green);background:var(--green-light);padding:4px 12px;border-radius:20px;border:1px solid rgba(30,132,73,0.35);white-space:nowrap}
+body{background:var(--bg);color:var(--text);font-family:'Source Sans 3',sans-serif;font-size:19px;line-height:1.7;min-height:100vh;overflow-x:hidden;-webkit-tap-highlight-color:transparent}
+.page{max-width:480px;margin:0 auto;padding:62px 0 80px}
+nav{background:var(--navy);padding:15px 18px;display:flex;align-items:center;gap:12px;position:fixed;top:0;left:0;right:0;z-index:1000;box-shadow:0 2px 8px rgba(0,0,0,0.2)}
+.nav-back{color:rgba(255,255,255,0.8);font-size:0.95rem;font-weight:600;text-decoration:none;display:flex;align-items:center;gap:5px;white-space:nowrap}
+.nav-title{font-family:'Lora',serif;font-size:1rem;font-weight:700;color:#fff;flex:1}
+.nav-live{font-size:0.8rem;font-weight:700;color:var(--green);background:var(--green-light);padding:5px 14px;border-radius:20px;border:1px solid rgba(30,132,73,0.35);white-space:nowrap}
 .hero{background:var(--navy);padding:32px 22px 44px;text-align:center;position:relative;overflow:hidden}
 .hero::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:40px;background:var(--bg);clip-path:ellipse(55% 100% at 50% 100%)}
 .hero-icon{font-size:3rem;margin-bottom:10px}
