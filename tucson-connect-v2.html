@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Tucson Connect — Free Apps for Our Community</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #F7F4EF;
+  --bg2: #EDEAE3;
+  --white: #FFFFFF;
+  --navy: #1A2E4A;
+  --navy2: #2C4A6E;
+  --teal: #1A7A6E;
+  --teal2: #22A090;
+  --teal-light: #E8F5F3;
+  --gold: #B8860B;
+  --gold-light: #FEF9E7;
+  --red: #C0392B;
+  --red-light: #FDEDEC;
+  --green: #1E8449;
+  --green-light: #EAFAF1;
+  --blue: #1A5276;
+  --blue-light: #EBF5FB;
+  --orange: #CA6F1E;
+  --orange-light: #FDF2E9;
+  --text: #2C3E50;
+  --text-mid: #566573;
+  --text-light: #85929E;
+  --border: #D5D8DC;
+  --border-dark: #AAB7B8;
+  --shadow: 0 2px 12px rgba(0,0,0,0.08);
+  --shadow-hover: 0 6px 24px rgba(0,0,0,0.13);
+}
+
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 18px;
+  line-height: 1.7;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  background: var(--navy);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.nav-logo {
+  font-family: 'Lora', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.01em;
+}
+
+.nav-logo span { color: #7EC8C0; }
+
+.nav-free {
+  font-size: 0.82rem;
+  font-weight: 600;
+  background: #7EC8C0;
+  color: var(--navy);
+  padding: 6px 14px;
+  border-radius: 20px;
+}
+
+/* ── HERO ── */
+.hero {
+  background: var(--navy);
+  padding: 40px 24px 48px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -1px; left: 0; right: 0;
+  height: 40px;
+  background: var(--bg);
+  clip-path: ellipse(55% 100% at 50% 100%);
+}
+
+.hero-eyebrow {
+  display: inline-block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #7EC8C0;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  border: 1px solid rgba(126,200,192,0.4);
+  padding: 5px 14px;
+  border-radius: 20px;
+}
+
+.hero-title {
+  font-family: 'Lora', serif;
+  font-size: clamp(1.8rem, 6vw, 2.6rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+
+.hero-title span { color: #7EC8C0; }
+
+.hero-sub {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.75);
+  font-weight: 300;
+  max-width: 340px;
+  margin: 0 auto 24px;
+  line-height: 1.7;
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  margin-top: 8px;
+}
+
+.hstat-num {
+  font-family: 'Lora', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #7EC8C0;
+  line-height: 1;
+  margin-bottom: 2px;
+}
+
+.hstat-lbl {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.6);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ── PAGE BODY ── */
+.body { max-width: 480px; margin: 0 auto; padding: 0 0 80px; }
+
+/* ── FREE BANNER ── */
+.free-banner {
+  margin: 28px 18px 24px;
+  background: var(--teal-light);
+  border: 2px solid var(--teal2);
+  border-radius: 16px;
+  padding: 20px 20px;
+  text-align: center;
+}
+
+.free-banner h3 {
+  font-family: 'Lora', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--teal);
+  margin-bottom: 8px;
+}
+
+.free-banner p {
+  font-size: 0.95rem;
+  color: var(--text-mid);
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.free-banner p strong { color: var(--text); }
+
+/* ── SECTION LABEL ── */
+.sec-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 0 20px;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sec-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ── APP CARDS ── */
+.apps-list {
+  padding: 0 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 32px;
+}
+
+.app-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  display: block;
+  transition: box-shadow 0.25s, transform 0.2s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.app-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); }
+.app-card:active { transform: scale(0.99); }
+
+.app-card-stripe {
+  height: 5px;
+  background: var(--teal);
+}
+.app-card.gold-card .app-card-stripe { background: var(--gold); }
+.app-card.green-card .app-card-stripe { background: var(--green); }
+.app-card.blue-card .app-card-stripe { background: var(--blue); }
+.app-card.coming .app-card-stripe { background: var(--border-dark); }
+
+.app-card-body { padding: 18px 18px 16px; }
+
+.app-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.app-icon {
+  width: 58px; height: 58px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  flex-shrink: 0;
+  background: var(--teal-light);
+  border: 1px solid rgba(26,122,110,0.2);
+}
+
+.app-card.gold-card .app-icon { background: var(--gold-light); border-color: rgba(184,134,11,0.2); }
+.app-card.green-card .app-icon { background: var(--green-light); border-color: rgba(30,132,73,0.2); }
+.app-card.blue-card .app-icon { background: var(--blue-light); border-color: rgba(26,82,118,0.2); }
+.app-card.coming .app-icon { background: var(--bg2); border-color: var(--border); }
+
+.app-status {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+  flex-shrink: 0;
+  letter-spacing: 0.04em;
+}
+
+.status-live { background: var(--green-light); color: var(--green); border: 1px solid rgba(30,132,73,0.3); }
+.status-coming { background: var(--bg2); color: var(--text-light); border: 1px solid var(--border); }
+
+.app-name {
+  font-family: 'Lora', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 6px;
+  line-height: 1.25;
+}
+
+.app-desc {
+  font-size: 0.92rem;
+  color: var(--text-mid);
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+.app-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.app-tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--teal);
+  background: var(--teal-light);
+  border: 1px solid rgba(26,122,110,0.25);
+  padding: 3px 10px;
+  border-radius: 6px;
+}
+
+.app-card.gold-card .app-tag { color: var(--gold); background: var(--gold-light); border-color: rgba(184,134,11,0.25); }
+.app-card.green-card .app-tag { color: var(--green); background: var(--green-light); border-color: rgba(30,132,73,0.25); }
+.app-card.blue-card .app-tag { color: var(--blue); background: var(--blue-light); border-color: rgba(26,82,118,0.25); }
+
+.app-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.app-cta-label {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--teal);
+}
+
+.app-card.gold-card .app-cta-label { color: var(--gold); }
+.app-card.coming .app-cta-label { color: var(--text-light); }
+
+.app-arrow {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  background: var(--teal-light);
+  border: 1px solid rgba(26,122,110,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: var(--teal);
+  font-weight: 700;
+  transition: background 0.2s;
+}
+
+.app-card:hover .app-arrow { background: var(--teal); color: #fff; }
+.app-card.gold-card .app-arrow { background: var(--gold-light); border-color: rgba(184,134,11,0.3); color: var(--gold); }
+.app-card.gold-card:hover .app-arrow { background: var(--gold); color: #fff; }
+.app-card.coming .app-arrow { opacity: 0.4; }
+
+/* ── PHILOSOPHY ── */
+.philosophy-strip {
+  margin: 0 18px 28px;
+  background: var(--gold-light);
+  border-left: 5px solid var(--gold);
+  border-radius: 0 14px 14px 0;
+  padding: 20px 20px;
+}
+
+.philo-text {
+  font-family: 'Lora', serif;
+  font-size: 0.95rem;
+  color: var(--text);
+  font-style: italic;
+  line-height: 1.7;
+  margin-bottom: 8px;
+}
+
+.philo-author {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+/* ── NOTIFY ── */
+.notify-section { margin: 0 18px 28px; }
+
+.notify-card {
+  background: var(--white);
+  border: 2px solid var(--gold);
+  border-radius: 16px;
+  padding: 22px 20px;
+  box-shadow: var(--shadow);
+}
+
+.notify-title {
+  font-family: 'Lora', serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+
+.notify-sub {
+  font-size: 0.9rem;
+  color: var(--text-mid);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.notify-form { display: flex; flex-direction: column; gap: 10px; }
+
+.notify-input {
+  width: 100%;
+  background: var(--bg);
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1rem;
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.notify-input:focus { border-color: var(--teal2); }
+.notify-input::placeholder { color: var(--text-light); }
+
+.notify-btn {
+  background: var(--navy);
+  color: #fff;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.notify-btn:hover { background: var(--navy2); }
+.notify-btn:active { transform: scale(0.98); }
+
+.notify-success {
+  display: none;
+  text-align: center;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--green);
+  padding: 14px;
+  border: 2px solid rgba(30,132,73,0.3);
+  border-radius: 10px;
+  background: var(--green-light);
+}
+
+/* ── ABOUT ── */
+.about-section { margin: 0 18px 28px; }
+
+.about-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 22px 20px;
+  box-shadow: var(--shadow);
+}
+
+.about-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.about-avatar {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  color: #7EC8C0;
+  font-family: 'Lora', serif;
+  font-weight: 700;
+}
+
+.about-name {
+  font-family: 'Lora', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.about-title {
+  font-size: 0.82rem;
+  color: var(--teal);
+  font-weight: 600;
+}
+
+.about-bio {
+  font-size: 0.92rem;
+  color: var(--text-mid);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.contact-list { display: flex; flex-direction: column; gap: 10px; }
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.92rem;
+  color: var(--text-mid);
+}
+
+.contact-icon {
+  width: 36px; height: 36px;
+  border-radius: 10px;
+  background: var(--teal-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.contact-item a {
+  color: var(--teal);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--navy);
+  padding: 32px 24px 24px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.footer-logo {
+  font-family: 'Lora', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.footer-logo span { color: #7EC8C0; }
+
+.footer-sub {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.8;
+}
+
+.footer-heart {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.4);
+  margin-top: 10px;
+}
+
+.footer-heart span { color: #FF7675; }
+
+/* ── VERSION TOGGLE ── */
+.version-toggle {
+  text-align: center;
+  padding: 14px 18px 0;
+}
+
+.version-btn {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 6px 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.version-btn:hover {
+  border-color: var(--teal2);
+  color: var(--teal);
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Tucson<span>Connect</span></div>
+  <div class="nav-free">All Free</div>
+</nav>
+
+<div class="body">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-eyebrow">📍 Tucson, AZ — For Our Community</div>
+    <h1 class="hero-title">Free Apps for<br><span>Tucson Neighbors</span></h1>
+    <p class="hero-sub">Helpful tools built by a local Tucson resident — no cost, no sign-up required, no strings attached.</p>
+    <div class="hero-stats">
+      <div class="hstat"><div class="hstat-num">Free</div><div class="hstat-lbl">Always</div></div>
+      <div class="hstat"><div class="hstat-num">Easy</div><div class="hstat-lbl">To Use</div></div>
+      <div class="hstat"><div class="hstat-num">Local</div><div class="hstat-lbl">Tucson</div></div>
+    </div>
+  </div>
+
+  <!-- VERSION TOGGLE -->
+  <div class="version-toggle">
+    <button class="version-btn" onclick="window.location.href='tucson-connect.html'">🌙 Switch to Dark Version</button>
+  </div>
+
+  <!-- FREE BANNER -->
+  <div class="free-banner">
+    <h3>🎁 Everything Here is Completely Free</h3>
+    <p>Browse around — you might find an app that's <strong>perfect for you</strong>. No credit card, no sign-up, no catches. Just helpful tools for Tucson neighbors.</p>
+  </div>
+
+  <!-- APPS -->
+  <div class="sec-label">Available Now</div>
+  <div class="apps-list">
+
+    <!-- PET FINDER — LIVE -->
+    <a class="app-card" href="tucson-pet-finder-v2.html">
+      <div class="app-card-stripe"></div>
+      <div class="app-card-body">
+        <div class="app-card-top">
+          <div class="app-icon">🐾</div>
+          <span class="app-status status-live">✓ Available Now</span>
+        </div>
+        <div class="app-name">Tucson Pet Finder</div>
+        <div class="app-desc">Lost or found a pet? Post a simple alert and neighbors nearby will be notified right away. Includes direct links to Pima Animal Control and local shelters.</div>
+        <div class="app-tags">
+          <span class="app-tag">Lost Pets</span>
+          <span class="app-tag">Found Pets</span>
+          <span class="app-tag">Free</span>
+        </div>
+        <div class="app-cta">
+          <span class="app-cta-label">Open This App →</span>
+          <div class="app-arrow">→</div>
+        </div>
+      </div>
+    </a>
+
+    <!-- BUSINESS LAUNCHPAD — COMING -->
+    <div class="app-card gold-card coming">
+      <div class="app-card-stripe"></div>
+      <div class="app-card-body">
+        <div class="app-card-top">
+          <div class="app-icon">🚀</div>
+          <span class="app-status status-coming">Coming Soon</span>
+        </div>
+        <div class="app-name">Tucson Business Helper</div>
+        <div class="app-desc">Own a small business in Tucson? Answer a few simple questions and get a personalized list of local grants, mentorship programs, and resources available to you.</div>
+        <div class="app-tags">
+          <span class="app-tag">Small Business</span>
+          <span class="app-tag">Grants</span>
+          <span class="app-tag">Free</span>
+        </div>
+        <div class="app-cta">
+          <span class="app-cta-label">Notify Me When Ready</span>
+          <div class="app-arrow">🔔</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AID CONNECTOR — COMING -->
+    <div class="app-card green-card coming">
+      <div class="app-card-stripe"></div>
+      <div class="app-card-body">
+        <div class="app-card-top">
+          <div class="app-icon">🤝</div>
+          <span class="app-status status-coming">Coming Soon</span>
+        </div>
+        <div class="app-name">Tucson Community Help Guide</div>
+        <div class="app-desc">Need help with food, rent, utilities, or pet care? This free tool will point you to the right Tucson organization — no confusing websites, no runaround.</div>
+        <div class="app-tags">
+          <span class="app-tag">Community Aid</span>
+          <span class="app-tag">En Español</span>
+          <span class="app-tag">Free</span>
+        </div>
+        <div class="app-cta">
+          <span class="app-cta-label">Notify Me When Ready</span>
+          <div class="app-arrow">🔔</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WATCH — COMING -->
+    <div class="app-card blue-card coming">
+      <div class="app-card-stripe"></div>
+      <div class="app-card-body">
+        <div class="app-card-top">
+          <div class="app-icon">🏘️</div>
+          <span class="app-status status-coming">Coming Soon</span>
+        </div>
+        <div class="app-name">Tucson Neighborhood Safety</div>
+        <div class="app-desc">Report suspicious activity, package theft, and safety concerns in your neighborhood. Stay informed and keep your block safe together.</div>
+        <div class="app-tags">
+          <span class="app-tag">Safety</span>
+          <span class="app-tag">Alerts</span>
+          <span class="app-tag">Free</span>
+        </div>
+        <div class="app-cta">
+          <span class="app-cta-label">Notify Me When Ready</span>
+          <div class="app-arrow">🔔</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- PHILOSOPHY -->
+  <div class="philosophy-strip">
+    <div class="philo-text">"I'm not here to sell you anything. I built these tools because Tucson neighbors asked for them and I wanted to help. Browse around — if something works for you, share it with a friend."</div>
+    <div class="philo-author">— Lamar Myers, Tucson Neighbor & Local Developer</div>
+  </div>
+
+  <!-- NOTIFY -->
+  <div class="notify-section">
+    <div class="notify-card">
+      <div class="notify-title">🔔 Get a Text When New Apps Are Ready</div>
+      <div class="notify-sub">New free tools are being added regularly. Leave your name and number and we'll send you a simple text message — nothing else.</div>
+      <div class="notify-form">
+        <input class="notify-input" type="text" id="notifyName" placeholder="Your first name" />
+        <input class="notify-input" type="tel" id="notifyPhone" placeholder="Your phone number" />
+        <button class="notify-btn" onclick="submitNotify()">Send Me Updates — It's Free</button>
+        <div class="notify-success" id="notifySuccess">✅ You're all set! We'll only text you when a new free app is ready.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="about-section">
+    <div class="sec-label" style="padding:0;margin-bottom:14px;">Who Built This</div>
+    <div class="about-card">
+      <div class="about-header">
+        <div class="about-avatar">LM</div>
+        <div>
+          <div class="about-name">Lamar Myers</div>
+          <div class="about-title">Local Developer · Tucson, AZ</div>
+        </div>
+      </div>
+      <div class="about-bio">I'm a Tucson neighbor and software developer. I noticed our community had real needs that weren't being met by any app, so I started building free tools — one problem at a time. If there's something you wish existed, reach out and I'll look into building it.</div>
+      <div class="contact-list">
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div><a href="tel:5202582714">520-258-2714</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🌐</div>
+          <div><a href="https://aiani-petcare.vercel.app" target="_blank">aiani-petcare.vercel.app</a></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div>Harrison East · Tucson, AZ 85710</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Tucson<span>Connect</span></div>
+    <div class="footer-sub">
+      Free Apps for Our Community · Tucson, AZ<br>
+      Built by Lamar Myers · VTREI, LLC · 2026
+    </div>
+    <div class="footer-heart">Made with <span>♥</span> for Tucson neighbors</div>
+  </footer>
+
+</div>
+
+<script>
+function submitNotify() {
+  const name = document.getElementById('notifyName').value.trim();
+  const phone = document.getElementById('notifyPhone').value.trim();
+  if (!name || !phone) { alert('Please enter your name and phone number.'); return; }
+  document.getElementById('notifySuccess').style.display = 'block';
+  document.getElementById('notifyName').style.display = 'none';
+  document.getElementById('notifyPhone').style.display = 'none';
+  document.querySelector('.notify-btn').style.display = 'none';
+}
+</script>
+</body>
+</html>
